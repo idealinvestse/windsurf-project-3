@@ -26,7 +26,7 @@ fun IntelliServeApp() {
             startDestination = "chat",
             modifier = Modifier.padding(paddingValues)
         ) {
-            composable("chat") { navBackStackEntry ->
+            composable("chat") {
                 val viewModel: ChatViewModel = hiltViewModel()
                 val uiState by viewModel.uiState.collectAsState()
                 
@@ -34,6 +34,7 @@ fun IntelliServeApp() {
                     uiState = uiState,
                     onSendMessage = viewModel::sendMessage,
                     onModelSelected = viewModel::selectModel,
+                    onClearChat = viewModel::clearChat,
                     modifier = Modifier.fillMaxSize()
                 )
             }

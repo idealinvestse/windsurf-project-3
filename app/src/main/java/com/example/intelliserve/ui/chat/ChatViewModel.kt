@@ -86,10 +86,15 @@ class ChatViewModel @Inject constructor(
     fun selectModel(model: AIModel) {
         _uiState.update { it.copy(selectedModel = model) }
     }
+    
+    fun clearChat() {
+        _uiState.update { it.copy(messages = emptyList()) }
+    }
 }
 
 data class ChatUiState(
     val messages: List<ChatMessage> = emptyList(),
     val selectedModel: AIModel = AIModel.GROQ_LLAMA_3_70B,
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val error: String? = null
 )

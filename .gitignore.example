@@ -1,0 +1,181 @@
+# ==============================================================================
+# .gitignore Example for IntelliServe Android Project
+# ==============================================================================
+# This is a template showing common patterns you might want to customize
+# Copy relevant sections to your .gitignore as needed
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🔐 SECURITY - NEVER COMMIT THESE!
+# ------------------------------------------------------------------------------
+
+# API Keys (CRITICAL!)
+local.properties                    # Contains SDK path and API keys
+secrets.properties                  # Custom secrets file
+api_keys.properties                 # API key storage
+.env                                # Environment variables
+.env.local                          # Local environment overrides
+
+# Signing Keys (CRITICAL!)
+*.jks                               # Java KeyStore files
+*.keystore                          # Android keystore files
+key.properties                      # Key configuration
+signing.properties                  # Signing configuration
+
+# Firebase (if using)
+google-services.json                # Firebase configuration (use different files for dev/prod)
+
+# ------------------------------------------------------------------------------
+# 🏗️ BUILD OUTPUTS - Auto-generated, don't commit
+# ------------------------------------------------------------------------------
+
+# APK/AAB files
+*.apk                               # Android Package
+*.aab                               # Android App Bundle
+*.aar                               # Android Archive
+
+# Build directories
+build/                              # Gradle build output
+.gradle/                            # Gradle cache
+out/                                # Alternative build output
+
+# ------------------------------------------------------------------------------
+# 💻 IDE FILES - Developer-specific
+# ------------------------------------------------------------------------------
+
+# Android Studio / IntelliJ
+*.iml                               # Module files
+.idea/workspace.xml                 # Workspace settings
+.idea/tasks.xml                     # Task configuration
+.idea/gradle.xml                    # Gradle settings
+.idea/misc.xml                      # Miscellaneous settings
+
+# KEEP THESE for team consistency:
+# .idea/codeStyles/                 # Code formatting rules
+# .idea/inspectionProfiles/         # Code inspection settings
+
+# VSCode
+.vscode/                            # VSCode settings
+*.code-workspace                    # Workspace files
+
+# ------------------------------------------------------------------------------
+# 🗄️ DATABASE FILES - Local development only
+# ------------------------------------------------------------------------------
+
+*.db                                # SQLite database
+*.db-shm                            # SQLite shared memory
+*.db-wal                            # SQLite write-ahead log
+*.sqlite                            # SQLite database
+*.realm                             # Realm database
+
+# ------------------------------------------------------------------------------
+# 🧪 TESTING & QUALITY - Generated reports
+# ------------------------------------------------------------------------------
+
+# Test results
+test-results/                       # Test output
+androidTest-results/                # Android test output
+
+# Coverage
+coverage/                           # Coverage reports
+*.exec                              # JaCoCo execution data
+
+# Lint
+lint/intermediates/                 # Lint cache
+lint/outputs/                       # Lint reports
+
+# ------------------------------------------------------------------------------
+# 📦 DEPENDENCIES - Downloaded via package managers
+# ------------------------------------------------------------------------------
+
+# Node.js (if using React Native or web components)
+node_modules/                       # NPM packages
+npm-debug.log*                      # NPM debug logs
+
+# Python (if using Python scripts)
+__pycache__/                        # Python cache
+venv/                               # Virtual environment
+
+# ------------------------------------------------------------------------------
+# 🖥️ OS FILES - Operating system artifacts
+# ------------------------------------------------------------------------------
+
+# macOS
+.DS_Store                           # Finder metadata
+._*                                 # Resource forks
+
+# Windows
+Thumbs.db                           # Thumbnail cache
+ehthumbs.db                         # Explorer thumbnail cache
+
+# Linux
+*~                                  # Backup files
+
+# ------------------------------------------------------------------------------
+# 📝 TEMPORARY FILES - Safe to ignore
+# ------------------------------------------------------------------------------
+
+*.tmp                               # Temporary files
+*.temp                              # Temporary files
+*.bak                               # Backup files
+*.swp                               # Vim swap files
+*.log                               # Log files
+
+# ------------------------------------------------------------------------------
+# 🎯 PROJECT-SPECIFIC - Customize for your needs
+# ------------------------------------------------------------------------------
+
+# Personal notes (optional)
+notes.txt
+todo.txt
+personal/
+scratch/
+
+# Documentation build (if using Sphinx, MkDocs, etc.)
+docs/_build/
+site/
+
+# Custom scripts output
+scripts/output/
+
+# ==============================================================================
+# CUSTOMIZATION TIPS
+# ==============================================================================
+#
+# 1. SECURITY FIRST
+#    - Always ignore API keys, passwords, and signing keys
+#    - Use environment variables or secure vaults for secrets
+#
+# 2. TEAM CONSISTENCY
+#    - Keep .idea/codeStyles/ for shared formatting
+#    - Keep .idea/inspectionProfiles/ for shared code quality rules
+#
+# 3. BUILD OPTIMIZATION
+#    - Ignore all build outputs (they can be regenerated)
+#    - Ignore dependency caches (they download automatically)
+#
+# 4. DEVELOPER EXPERIENCE
+#    - Ignore IDE-specific files (everyone uses different settings)
+#    - Ignore OS-specific files (team members use different OS)
+#
+# 5. CI/CD INTEGRATION
+#    - Your CI/CD should provide secrets via environment variables
+#    - Build outputs should be artifacts, not committed files
+#
+# ==============================================================================
+# QUICK REFERENCE
+# ==============================================================================
+#
+# Check what will be committed:
+#   git status
+#
+# Check what's ignored:
+#   git status --ignored
+#
+# Force add an ignored file (use carefully!):
+#   git add -f <file>
+#
+# Remove file from git but keep locally:
+#   git rm --cached <file>
+#
+# ==============================================================================
